@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: puprate-deployment
+  name: server-deployment
 spec: 
   replicas: 3
   selector: 
     matchLabels: 
-      component: web
+      component: server
   template: 
     metadata: 
       labels: 
-        component: web
+        component: server
     spec: 
       containers: 
-        - name: puprate
-          image: brandonjones085/puprate-angular
+        - name: server
+          image: brandonjones085/puprate-express
           ports: 
-            - containerPort: 4200
+            - containerPort: 3000

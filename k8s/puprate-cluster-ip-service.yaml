@@ -4,3 +4,8 @@ metadata:
   name: puprate-cluster-ip-service
 spec: 
   type: ClusterIP
+  selector: 
+    component: web
+  ports: 
+    - port: 4200
+      targetPort: 4200
